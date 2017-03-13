@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2qq-8T-3pG">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps-->
+        <scene sceneID="hr1-Qt-1ti">
+            <objects>
+                <viewController id="T8h-lR-Twq" customClass="HomeController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cPa-mV-B2h"/>
+                        <viewControllerLayoutGuide type="bottom" id="R0o-IF-2Lj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Yc-0W-Bns">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-mI-JxE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="zND-Fq-3gO">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zND-Fq-3gO" id="QH9-Nj-nGj">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="T8h-lR-Twq" id="brx-VO-dMF"/>
+                                    <outlet property="delegate" destination="T8h-lR-Twq" id="mNQ-3g-cb8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.049661915199999997" green="0.63850821710000005" blue="0.27069627190000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Yhx-mI-JxE" secondAttribute="bottom" id="B9E-xj-jgu"/>
+                            <constraint firstAttribute="topMargin" secondItem="Yhx-mI-JxE" secondAttribute="top" id="bW0-z2-zmc"/>
+                            <constraint firstItem="Yhx-mI-JxE" firstAttribute="leading" secondItem="0Yc-0W-Bns" secondAttribute="leading" id="oB8-ju-P4Z"/>
+                            <constraint firstAttribute="trailing" secondItem="Yhx-mI-JxE" secondAttribute="trailing" id="vA1-E3-rqV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Maps" id="igc-2i-BGR"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yhx-mI-JxE" id="oSD-Yu-KN0"/>
+                        <segue destination="TG1-Lf-n6r" kind="show" identifier="UserLocation" id="05F-f0-GnE"/>
+                        <segue destination="t3m-gx-YhR" kind="show" identifier="CustomPin" id="cD1-hO-yHB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGL-AW-peE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="375"/>
+        </scene>
+        <!--User Location View Controller-->
+        <scene sceneID="akU-Nx-zrZ">
+            <objects>
+                <viewController id="TG1-Lf-n6r" customClass="UserLocationViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55a-Ou-v3g"/>
+                        <viewControllerLayoutGuide type="bottom" id="MBL-vs-Vnw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AY3-cC-Knp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q95-RN-MnU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TG1-Lf-n6r" id="N65-gv-1Ns"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q95-RN-MnU" secondAttribute="trailing" id="1w6-Ef-3WH"/>
+                            <constraint firstItem="Q95-RN-MnU" firstAttribute="top" secondItem="55a-Ou-v3g" secondAttribute="bottom" id="FIo-lY-4GW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Q95-RN-MnU" secondAttribute="bottom" id="Mje-VN-JKV"/>
+                            <constraint firstItem="Q95-RN-MnU" firstAttribute="leading" secondItem="AY3-cC-Knp" secondAttribute="leading" id="Wyi-Up-11Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="Q95-RN-MnU" id="dxs-Rh-YTJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZz-y2-tWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612.5" y="-332.74647887323943"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fi4-98-wAB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qq-8T-3pG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fy6-Uj-1QM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.049661915199999997" green="0.63850821710000005" blue="0.27069627190000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T8h-lR-Twq" kind="relationship" relationship="rootViewController" id="3O4-F1-sSC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F5E-Lx-00o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.5" y="375"/>
+        </scene>
+        <!--Custom Pin View Controller-->
+        <scene sceneID="bkz-43-Swv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2w-Jh-mBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="t3m-gx-YhR" customClass="CustomPinViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Gm-iL-rG5"/>
+                        <viewControllerLayoutGuide type="bottom" id="bEP-2O-FOj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z32-B7-1LG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsL-va-6Yo">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <connections>
+                                    <outlet property="delegate" destination="t3m-gx-YhR" id="c28-cx-z98"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qsL-va-6Yo" firstAttribute="leading" secondItem="z32-B7-1LG" secondAttribute="leading" id="LEP-md-2Zs"/>
+                            <constraint firstAttribute="trailing" secondItem="qsL-va-6Yo" secondAttribute="trailing" id="VJT-u6-GVH"/>
+                            <constraint firstItem="qsL-va-6Yo" firstAttribute="top" secondItem="3Gm-iL-rG5" secondAttribute="bottom" id="mh6-bZ-bs5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qsL-va-6Yo" secondAttribute="bottom" id="xPm-OW-Nuc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="qsL-va-6Yo" id="TyZ-nx-8gF"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1613" y="375"/>
+        </scene>
+    </scenes>
+</document>
