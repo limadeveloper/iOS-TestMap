@@ -26,7 +26,8 @@ extension MapType {
     static func getData() -> [MapType] {
         return [
             MapType(id: 1, name: "User Location", identifier: Segue.userLocation),
-            MapType(id: 2, name: "Custom Pin", identifier: Segue.customPin)
+            MapType(id: 2, name: "Custom Pin", identifier: Segue.customPin),
+            MapType(id: 3, name: "Background Location", identifier: Segue.backgroundLocation)
         ]
     }
 }

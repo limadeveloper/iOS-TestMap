@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		826CCB4F1E78831F00C78C5C /* BackgroundModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826CCB4E1E78831F00C78C5C /* BackgroundModeViewController.swift */; };
 		82F07B9C1E76F38E00BD0F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F07B9B1E76F38E00BD0F67 /* AppDelegate.swift */; };
 		82F07B9E1E76F38E00BD0F67 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F07B9D1E76F38E00BD0F67 /* HomeController.swift */; };
 		82F07BA11E76F38E00BD0F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F07B9F1E76F38E00BD0F67 /* Main.storyboard */; };
 		82F07BA31E76F38E00BD0F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F07BA21E76F38E00BD0F67 /* Assets.xcassets */; };
 		82F07BA61E76F38E00BD0F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F07BA41E76F38E00BD0F67 /* LaunchScreen.storyboard */; };
-		82F07BAF1E76F45C00BD0F67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F07BAE1E76F45C00BD0F67 /* MapKit.framework */; };
 		82F07BB41E76F59000BD0F67 /* MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F07BB31E76F59000BD0F67 /* MapType.swift */; };
 		82F07BB71E76FD2F00BD0F67 /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F07BB61E76FD2F00BD0F67 /* UserLocationViewController.swift */; };
 		82F07BB91E770F1700BD0F67 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F07BB81E770F1700BD0F67 /* Global.swift */; };
@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		826CCB4E1E78831F00C78C5C /* BackgroundModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundModeViewController.swift; sourceTree = "<group>"; };
 		82F07B981E76F38E00BD0F67 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F07B9B1E76F38E00BD0F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82F07B9D1E76F38E00BD0F67 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F07BAF1E76F45C00BD0F67 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +108,7 @@
 				82F07B9D1E76F38E00BD0F67 /* HomeController.swift */,
 				82F07BB61E76FD2F00BD0F67 /* UserLocationViewController.swift */,
 				82F07BBA1E77276800BD0F67 /* CustomPinViewController.swift */,
+				826CCB4E1E78831F00C78C5C /* BackgroundModeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -154,6 +155,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = G9572JBENB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -198,6 +204,7 @@
 				82F07B9E1E76F38E00BD0F67 /* HomeController.swift in Sources */,
 				82F07BB41E76F59000BD0F67 /* MapType.swift in Sources */,
 				82F07BB91E770F1700BD0F67 /* Global.swift in Sources */,
+				826CCB4F1E78831F00C78C5C /* BackgroundModeViewController.swift in Sources */,
 				82F07B9C1E76F38E00BD0F67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +369,7 @@
 				82F07BAC1E76F38E00BD0F67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

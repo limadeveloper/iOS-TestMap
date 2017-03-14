@@ -69,6 +69,10 @@ extension HomeController {
             guard let indexPath = sender as? IndexPath else { break }
             let controller = segue.destination as? CustomPinViewController
             controller?.mapType = tableData[indexPath.row]
+        case Segue.backgroundLocation:
+            guard let indexPath = sender as? IndexPath else { break }
+            let controller = segue.destination as? BackgroundModeViewController
+            controller?.mapType = tableData[indexPath.row]
         default:
             break
         }

@@ -12,6 +12,7 @@ import UIKit
 struct Segue {
     static let userLocation = "UserLocation"
     static let customPin = "CustomPin"
+    static let backgroundLocation = "BackgroundLocation" 
 }
 
 struct Message {

@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zND-Fq-3gO" id="QH9-Nj-nGj">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -55,6 +55,7 @@
                         <outlet property="tableView" destination="Yhx-mI-JxE" id="oSD-Yu-KN0"/>
                         <segue destination="TG1-Lf-n6r" kind="show" identifier="UserLocation" id="05F-f0-GnE"/>
                         <segue destination="t3m-gx-YhR" kind="show" identifier="CustomPin" id="cD1-hO-yHB"/>
+                        <segue destination="IqV-kv-pmT" kind="show" identifier="BackgroundLocation" id="Aqp-oi-fVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGL-AW-peE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,7 +119,6 @@
         <!--Custom Pin View Controller-->
         <scene sceneID="bkz-43-Swv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J2w-Jh-mBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="t3m-gx-YhR" customClass="CustomPinViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Gm-iL-rG5"/>
@@ -147,8 +147,44 @@
                         <outlet property="map" destination="qsL-va-6Yo" id="TyZ-nx-8gF"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J2w-Jh-mBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1613" y="375"/>
+        </scene>
+        <!--Background Mode View Controller-->
+        <scene sceneID="V80-Bo-7gR">
+            <objects>
+                <viewController id="IqV-kv-pmT" customClass="BackgroundModeViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0u2-lC-qFU"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ap-zZ-ZY8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rZW-Zk-o9m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jA2-jA-2Oe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IqV-kv-pmT" id="eaH-UA-M5T"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="jA2-jA-2Oe" secondAttribute="bottom" id="DZO-7y-jvO"/>
+                            <constraint firstItem="jA2-jA-2Oe" firstAttribute="top" secondItem="0u2-lC-qFU" secondAttribute="bottom" id="dup-Bw-iJI"/>
+                            <constraint firstItem="jA2-jA-2Oe" firstAttribute="leading" secondItem="rZW-Zk-o9m" secondAttribute="leading" id="sSJ-gL-B6V"/>
+                            <constraint firstAttribute="trailing" secondItem="jA2-jA-2Oe" secondAttribute="trailing" id="sa6-8C-NYC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="jA2-jA-2Oe" id="xAx-f1-WRz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ziB-4w-07C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613" y="1087"/>
         </scene>
     </scenes>
 </document>

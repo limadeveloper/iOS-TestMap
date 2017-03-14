@@ -13,9 +13,9 @@ import CoreLocation
 class UserLocationViewController: UIViewController {
 
     // MARK: - Properties
-    @IBOutlet weak var map: MKMapView?
+    @IBOutlet fileprivate weak var map: MKMapView?
     
-    let manager = CLLocationManager()
+    fileprivate let manager = CLLocationManager()
     
     var mapType: MapType?
     
@@ -28,13 +28,13 @@ class UserLocationViewController: UIViewController {
     }
     
     // MARK: - Actions
-    func setMap() {
-        manager.delegate = self
+    fileprivate func setMap() {
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.delegate = self
         manager.requestWhenInUseAuthorization()
     }
     
-    func updateUI() {
+    fileprivate func updateUI() {
         guard let title = mapType?.name else { return }
         navigationItem.title = title
     }
